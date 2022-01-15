@@ -103,3 +103,6 @@ VPS
 - 2022年01月15日 17:07:41 添加httplog功能，升级数据格式。
 - 2022年01月15日 17:52:03 添加SSRF辅助功能。
 - 2022年01月15日 18:52:42 添加反弹shell功能,支持bash、sh、nc、python、awk、telnet弹shell方法。
+
+## curl 效果日志
+![image](https://user-images.githubusercontent.com/27001865/149620709-e02d8876-8320-445c-8cf3-151f653b04b3.png)
