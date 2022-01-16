@@ -92,7 +92,7 @@ listening on [any] 1234 ...
 connect to [1.2.3.4] from fbi.gov [127.0.0.1] 46958
 ```
 
-# RMI or LDAP 
+### RMI or LDAP 
 PATH规则为“sub/text”,sub为子域名的主机头，text为自定义特征
 例如：子域名=oz4e.fuzz.red，text=Alphabug
 => oz4e/Alphabug
