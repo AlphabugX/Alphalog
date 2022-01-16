@@ -99,6 +99,7 @@ PATH规则为“sub/text”,sub为子域名的主机头，text为自定义特征
 
 ```bash
 rmi://jndi.fuzz.red:5/oz4e/Alphabug
+# or
 ldap://jndi.fuzz.red:5/oz4e/Alphabug
 ```
 获取log
