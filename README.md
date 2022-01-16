@@ -107,8 +107,8 @@ ldap://jndi.fuzz.red:5/oz4e/Alphabug
 $ curl fuzz.red -X POST -d "key=63d755be-9683-40a9-91fb-b85890155872" | python -m json.tool
 
 {
-	"Code": 200,
-	"Data": [
+	"code": 200,
+	"data": [
 		{
 			"ip": "1.2.3.4:41584",
 			"reqbody": "Alphabug",
