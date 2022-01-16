@@ -86,6 +86,32 @@ VPS
    connect to [1.2.3.4] from fbi.gov [127.0.0.1] 46958
 ```
 
+# RMI or LDAP 
+PATH规则为“sub/text”,sub为子域名的主机头，text为自定义特征
+例如：子域名=oz4e.fuzz.red，text=Alphabug
+=> oz4e/Alphabug
+
+```bash
+rmi://jndi.fuzz.red:5/oz4e/Alphabug
+ldap://jndi.fuzz.red:5/oz4e/Alphabug
+```
+获取log
+```bash
+$ curl fuzz.red -X POST -d "key=63d755be-9683-40a9-91fb-b85890155872" | python -m json.tool
+
+{
+	"Code": 200,
+	"Data": [
+		{
+			"ip": "1.2.3.4:41584",
+			"reqbody": "Alphabug",
+			"subdomain": "oz4e.fuzz.red.",
+			"time": "2022-01-16 03:40:03 -0500 EST",
+			"type": "ldap"
+		}
+	]
+}
+```
 ## 作者有话说
 
 ###  项目名称为：Alphalog，作者Alphabug。
@@ -103,6 +129,10 @@ VPS
 - 2022年01月15日 17:07:41 添加httplog功能，升级数据格式。
 - 2022年01月15日 17:52:03 添加SSRF辅助功能。
 - 2022年01月15日 18:52:42 添加反弹shell功能,支持bash、sh、nc、python、awk、telnet弹shell方法。
+- 2022年01月16日 16:45:12 添加RMI、LDAP log功能，引用https://github.com/EmYiQing/JNDIScan核心模块，实现log查询。
 
 ## curl 效果日志
 ![image](https://user-images.githubusercontent.com/27001865/149620709-e02d8876-8320-445c-8cf3-151f653b04b3.png)
+
+## www.fuzz.red 效果
+![HQ@A20U5A3@EY$%82JG76 X](https://user-images.githubusercontent.com/27001865/149654871-c93be50f-5e42-4c6a-b1d2-447870285cb5.png)
