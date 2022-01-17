@@ -56,8 +56,8 @@ curl oz4e.fuzz.red -d "abc"
 ```bash
 $ curl fuzz.red -X POST -d "key=63d755be-9683-40a9-91fb-b85890155872" | python -m json.tool
 {
-"Code": 200,
-"Data": [
+"code": 200,
+"data": [
 	{...}]
 }
 ```
