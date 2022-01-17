@@ -142,4 +142,6 @@ $ curl fuzz.red -X POST -d "key=63d755be-9683-40a9-91fb-b85890155872" | python -
 ![image](https://user-images.githubusercontent.com/27001865/149620709-e02d8876-8320-445c-8cf3-151f653b04b3.png)
 
 ## www.fuzz.red 效果
-![HQ@A20U5A3@EY$%82JG76 X](https://user-images.githubusercontent.com/27001865/149654871-c93be50f-5e42-4c6a-b1d2-447870285cb5.png)
+![image](https://user-images.githubusercontent.com/27001865/149708458-968df20c-5159-4a35-8f61-40e5b15ce269.png)
+
+![image](https://user-images.githubusercontent.com/27001865/149654871-c93be50f-5e42-4c6a-b1d2-447870285cb5.png)
