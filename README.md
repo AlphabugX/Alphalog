@@ -19,7 +19,9 @@ Alphalog 更快、更安全。支持完全匿名 产品(fuzz.red)
 ```
 
 # Welcome to Fuzz.Red #
-![image](https://user-images.githubusercontent.com/27001865/150347697-4dcd401f-c664-43e1-a388-cc8055d34343.png)
+
+![image](https://user-images.githubusercontent.com/27001865/150348452-38595c7d-8f16-4564-a1c7-9a02ed9b57a9.png)
+
 ## Usage
 
 1. Get token(`key`) and randomly named subdomain (Expires: 1 Day)
