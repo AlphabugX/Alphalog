@@ -2,7 +2,7 @@
 
 # Alphalog
 
-DNSLOG、httplog、rmilog、ldaplog、jndi 等都支持,完全匿名 产品(fuzz.red)，Alphalog更快、更安全。
+DNSLog、httplog、rmilog、ldaplog、jndi 等都支持,完全匿名 产品(fuzz.red)，Alphalog与传统DNSLog不同，更快、更安全。
 
 
 ```bash
