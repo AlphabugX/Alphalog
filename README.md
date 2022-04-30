@@ -1,6 +1,6 @@
 <img src="fuzz.red.jpg">
 
-# Alphalog
+# Alphalog (正式开源公测)
 
 DNSLog、httplog、rmilog、ldaplog、jndi 等都支持,完全匿名 产品(fuzz.red)，Alphalog与传统DNSLog不同，更快、更安全。
 
