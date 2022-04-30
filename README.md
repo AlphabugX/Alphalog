@@ -23,6 +23,55 @@ DNSLog、httplog、rmilog、ldaplog、jndi 等都支持,完全匿名 产品(fuzz
 
 ![image](https://user-images.githubusercontent.com/27001865/150348452-38595c7d-8f16-4564-a1c7-9a02ed9b57a9.png)
 
+## Install
+
+1. 系统环境
+- 任意平台
+- Redis数据库
+
+2. 配置config.yaml文件
+```
+domain: alphabug.cn
+IP_DNS: VPS地址
+IP_JNDI: VPS地址
+database: redis:Redis数据库地址:端口:密码
+PORT_HTTP: HTTPLOG端口
+PORT_JNDI: RMI/LDAP端口
+```
+例如
+```
+domain: alphabug.cn
+IP_DNS: 192.168.1.7
+IP_JNDI: 192.168.1.7
+database: redis:192.168.1.3:6379:Alphabug
+PORT_HTTP: 80
+PORT_JNDI: 5
+```
+
+3. Run
+```
+E:\Code\GolandProjects\Alphalog\output> Alphalog_windows_amd64.exe
+
+  $$$$$$\  $$\           $$\                 $$\
+ $$  __$$\ $$ |          $$ |                $$ |
+ $$ /  $$ |$$ | $$$$$$\  $$$$$$$\   $$$$$$\  $$ |      $$$$$$\   $$$$$$\
+ $$$$$$$$ |$$ |$$  __$$\ $$  __$$\  \____$$\ $$ |     $$  __$$\ $$  __$$\
+ $$  __$$ |$$ |$$ /  $$ |$$ |  $$ | $$$$$$$ |$$ |     $$ /  $$ |$$ /  $$ |
+ $$ |  $$ |$$ |$$ |  $$ |$$ |  $$ |$$  __$$ |$$ |     $$ |  $$ |$$ |  $$ |
+ $$ |  $$ |$$ |$$$$$$$  |$$ |  $$ |\$$$$$$$ |$$$$$$$$\\$$$$$$  |\$$$$$$$ |
+ \__|  \__|\__|$$  ____/ \__|  \__| \_______|\________|\______/  \____$$ |
+               $$ |                                             $$\   $$ |
+               $$ |                 By:Alphabug                 \$$$$$$  |
+               \__|                 Version:1.0.0.Releases       \______/
+2022/04/30 20:40:09 [Config] Redis Initialization succeeded
+2022/04/30 20:40:09 [DNS] Domain: alphabug.cn
+2022/04/30 20:40:09 [Redis] Start redis database init
+2022/04/30 20:40:09 [DNS] Initialization succeeded
+2022/04/30 20:40:09 [JNDI] Start fake reverse server
+
+```
+
+
 ## Usage
 
 1. Get token(`key`) and randomly named subdomain (Expires: 1 Day)
