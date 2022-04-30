@@ -140,6 +140,7 @@ $ curl fuzz.red -X POST -d "key=63d755be-9683-40a9-91fb-b85890155872" | python -
 - 2022年01月15日 17:52:03 添加SSRF辅助功能。
 - 2022年01月15日 18:52:42 添加反弹shell功能,支持bash、sh、nc、python、awk、telnet弹shell方法。
 - 2022年01月16日 16:45:12 添加RMI、LDAP log功能，引用https://github.com/EmYiQing/JNDIScan核心模块，实现log查询。
+- 2022年4月30日 20:26:29 正式开源，进行公测，任何问题，请及时反馈到Issues，在此感谢所有支持Alphalog项目的朋友，由衷的感谢，另外新增短链接功能，优化API。(相关API文档后续公布，欢迎提稿)
 
 ## curl 效果日志
 ![image](https://user-images.githubusercontent.com/27001865/149620709-e02d8876-8320-445c-8cf3-151f653b04b3.png)
