@@ -1,4 +1,4 @@
-<img src="fuzz.red.jpg">
+[![](https://raw.githubusercontent.com/AlphabugX/Alphalog/main/fuzz.red.jpg)](https://www.fuzz.red/)
 
 # Alphalog (正式开源公测)
 
