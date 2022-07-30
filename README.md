@@ -29,7 +29,8 @@ DNSLog、httplog、rmilog、ldaplog、jndi 等都支持,完全匿名 产品(fuzz
 - 任意平台
 - Redis数据库
 
-2. 配置config.yaml文件
+2. 创建config.yaml文件
+内容如下
 ```
 domain: alphabug.cn
 IP_DNS: VPS地址
