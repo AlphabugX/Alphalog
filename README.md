@@ -1,6 +1,6 @@
 [![](https://raw.githubusercontent.com/AlphabugX/Alphalog/main/fuzz.red.jpg)](https://www.fuzz.red/)
 
-# Alphalog (正式开源公测)
+# Alphalog
 
 DNSLog、httplog、rmilog、ldaplog、jndi 等都支持,完全匿名 产品(fuzz.red)，Alphalog与传统DNSLog不同，更快、更安全。
 
