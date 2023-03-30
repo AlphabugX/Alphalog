@@ -1,8 +1,15 @@
-[![](https://raw.githubusercontent.com/AlphabugX/Alphalog/main/fuzz.red.jpg)](https://www.fuzz.red/)
 
 # Alphalog
 
-DNSLog、httplog、rmilog、ldaplog、jndi 等都支持,完全匿名 产品(fuzz.red)，Alphalog与传统DNSLog不同，更快、更安全。
+DNSLog、httplog、rmilog、ldaplog、jndi 等都支持,完全匿名 ，Alphalog与传统DNSLog不同，更快、更安全。
+
+# patch 内容
+
+update了前端展示，增加了DNS外带功能。支持极端条件下命令执行结果通过dns外带 >>> [demo](https://acm-1252849447.cos.ap-chengdu.myqcloud.com/index.html)
+
+<img width="1955" alt="image" src="https://user-images.githubusercontent.com/13174906/228754119-0c61631e-d067-44e7-bafb-d6410989125d.png">
+
+![image](https://user-images.githubusercontent.com/13174906/228754642-7da361fc-c674-4ea7-8b71-bdb626d97573.png)
 
 
 ```bash
@@ -19,7 +26,7 @@ DNSLog、httplog、rmilog、ldaplog、jndi 等都支持,完全匿名 产品(fuzz
                \__|                 Version:0.2022.01.16.01      \______/
 ```
 
-# Welcome to Fuzz.Red #
+# Welcome to alphalog #
 
 ![image](https://user-images.githubusercontent.com/27001865/150348452-38595c7d-8f16-4564-a1c7-9a02ed9b57a9.png)
 
