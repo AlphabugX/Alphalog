@@ -5,7 +5,7 @@ DNSLog、httplog、rmilog、ldaplog、jndi 等都支持,完全匿名 ，Alphalog
 
 # patch 内容
 
-update了前端展示，增加了DNS外带功能。支持极端条件下命令执行结果通过dns外带 >>> [demo](https://acm-1252849447.cos.ap-chengdu.myqcloud.com/index.html)
+update了前端展示，增加了DNS外带功能。支持极端条件下命令执行结果通过dns外带 >>> [demo](https://www.callback.red/)
 
 <img width="1955" alt="image" src="https://user-images.githubusercontent.com/13174906/228754119-0c61631e-d067-44e7-bafb-d6410989125d.png">
 
