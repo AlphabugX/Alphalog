@@ -3,15 +3,6 @@
 
 DNSLog、httplog、rmilog、ldaplog、jndi 等都支持,完全匿名 ，Alphalog与传统DNSLog不同，更快、更安全。
 
-# patch 内容
-
-update了前端展示，增加了DNS外带功能。支持极端条件下命令执行结果通过dns外带 >>> [demo](https://www.callback.red/)
-
-<img width="1955" alt="image" src="https://user-images.githubusercontent.com/13174906/228754119-0c61631e-d067-44e7-bafb-d6410989125d.png">
-
-![image](https://user-images.githubusercontent.com/13174906/228754642-7da361fc-c674-4ea7-8b71-bdb626d97573.png)
-
-
 ```bash
   $$$$$$\  $$\           $$\                 $$\                          
  $$  __$$\ $$ |          $$ |                $$ |                         
@@ -206,6 +197,15 @@ $ curl fuzz.red -X POST -d "key=63d755be-9683-40a9-91fb-b85890155872" | python -
 ![www fuzz red_(iPhone X)](https://user-images.githubusercontent.com/27001865/149708515-c1dcf244-babe-4948-9418-3760c697010c.png)
 
 ![image](https://user-images.githubusercontent.com/27001865/149654871-c93be50f-5e42-4c6a-b1d2-447870285cb5.png)
+
+# patch 内容
+
+update了前端展示，增加了DNS外带功能。支持极端条件下命令执行结果通过dns外带 >>> [demo](https://www.callback.red/)
+
+<img width="1955" alt="image" src="https://user-images.githubusercontent.com/13174906/228754119-0c61631e-d067-44e7-bafb-d6410989125d.png">
+
+![image](https://user-images.githubusercontent.com/13174906/228754642-7da361fc-c674-4ea7-8b71-bdb626d97573.png)
+
 
 
 ## Stargazers over time
